@@ -15,3 +15,40 @@ def return_keyarray(key):
         if key[i][j] == 0:
             key_array.append([i,j])
     return key_array
+
+def solution(key, lock):
+    
+
+    # lock에 홈이 있는 좌표 저장
+    lock_N = len(lock)
+    lock_array = []
+    for i in range(lock_N):
+        for j in range(lock_N):
+            if lock[i][j] == 0:
+                lock_array.append([i,j])
+                
+    # 0도 에서 key에 돌기가 있는 좌표 저장    
+    key_array = return_keyarray(key)
+    if set(lock_array)-set(key_array) == set():
+        return true
+    else:
+        for _ in range(1,N-1):
+            key_array
+        
+    
+    
+    
+                
+    k = rotate_90(key)
+    
+    
+    for(i = 0)
+    
+    
+    
+    
+    
+    
+
+    
+    return answer
