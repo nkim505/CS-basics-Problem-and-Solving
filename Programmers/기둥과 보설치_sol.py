@@ -1,3 +1,5 @@
+
+# 출처 및 문제 설명 : https://velog.io/@tjdud0123/%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-2020-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EA%B3%B5%EC%B1%84-python
 def impossible(result):
     COL, ROW = 0, 1
     for x, y, a in result:
