@@ -1,4 +1,4 @@
-from itertools import combinations
+from itertools import combinations #조합과 순열에서 itertools
 
 n, m = map(int,input().split())
 array = []
