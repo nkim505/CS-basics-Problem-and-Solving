@@ -1,0 +1,46 @@
+from collections import deque
+
+def solution(cacheSize, cities):
+    
+    '''
+    //LRU 알고리즘//
+    1. 새로운 데이터가 들어오면
+    1.1. 캐시에 넣어주고, 1.2. 캐시가 가득차있으면 가장 오래된 데이터 제거하고 넣어줌.
+    2. 존재하는 데이터가 들어오면
+    2.1 해당 데이터 꺼내고, 2.2 가장 최근 데이터 위치로 보냄(캐시 리스트의 가장 마지막 idx)
+    '''
+    
+    s = cacheSize
+    cache = [] # 캐시 생성
+    answer = 0
+    
+    while cities:
+        data = cities.pop(0)
+        
+        # cache miss (실행시간 5)
+        if data not in cache:
+            if len(cache) < cacheSize:
+                cache.append(data)
+                answer += 5
+            
+            elif len(cache) == 0:
+                answer += 5   
+            else:
+                cache.pop(0)
+                cache.append(data)
+                answer += 5
+ 
+
+        # cache hit (실행시간 1)
+        else:
+            cache.pop(cache.index(data))
+            cache.append(data)
+            answer += 1  
+    
+    return answer
+    
+    
+#테스트 케이스 : 테스트 5 안풀리고 있음.
+#입력값 〉	2, ["Jeju", "Pangyo", "NewYork", "newyork"]
+#기댓값 〉	16
+#실행 결과 〉	실행한 결괏값 20이 기댓값 16과 다릅니다.
